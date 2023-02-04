@@ -33,3 +33,10 @@ jobs:
     - name: Build
       run: npm run build
       working-directory: ./ui
+    - name: Add Build Directory
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add --force ./ui/build/
+        git commit -m "generated"
+        git push
