@@ -4,13 +4,14 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/go-chi/chi/v5"
-	"github.com/ichiban/gallery"
 	"log"
 	"net/http"
 	"os"
 
+	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+
+	"github.com/ichiban/gallery"
 )
 
 func main() {

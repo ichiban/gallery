@@ -10,7 +10,7 @@ $ npm run dev
 ```
 
 ```console
-$ go run cmd/gallery/main.go cmd/gallery/dev.go -d ~/Desktop/
+$ go run -tags dev cmd/gallery/main.go cmd/gallery/dev.go -d ~/Desktop/
 ```
 
 ## Production

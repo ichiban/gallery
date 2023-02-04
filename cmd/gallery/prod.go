@@ -1,5 +1,5 @@
-//go:build release
-// +build release
+//go:build !dev
+// +build !dev
 
 package main
 
@@ -7,6 +7,8 @@ import (
 	"io/fs"
 	"log"
 	"net/http"
+
+	"github.com/ichiban/gallery"
 )
 
 func root() http.Handler {
