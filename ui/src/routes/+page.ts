@@ -4,6 +4,7 @@ export type pageData = App.PageData & {images?: Promise<Array<Image>>};
 
 export interface Image {
     url: string,
+    thumb_url: string
 }
 
 export async function load({fetch}: LoadEvent): Promise<pageData> {

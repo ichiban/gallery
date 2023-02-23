@@ -20,7 +20,7 @@
 <div class="gallery" bind:this={gallery}>
     {#each data.images || [] as image}
         <a href="{image.url}" data-lg-size="1600-2400">
-            <img alt="" src="{image.url}" loading="lazy"/>
+            <img alt="" src="{image.thumb_url}" loading="lazy"/>
         </a>
     {/each}
 </div>

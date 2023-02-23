@@ -42,6 +42,7 @@ func main() {
 		_, _ = w.Write(b)
 	})
 	r.Mount("/files/", http.StripPrefix("/files/", http.FileServer(http.FS(os.DirFS(dir)))))
+	r.Mount("/thumbs/", http.StripPrefix("/thumbs/", gallery.ThumbnailServer(http.FS(os.DirFS(dir)))))
 	r.Mount("/", root())
 
 	err := http.ListenAndServe(fmt.Sprintf(":%d", port), r)

@@ -8,7 +8,8 @@ import (
 )
 
 type Image struct {
-	URL string `json:"url"`
+	URL      string `json:"url"`
+	ThumbURL string `json:"thumb_url"`
 }
 
 func List(images *[]Image, root string) error {
@@ -25,10 +26,11 @@ func List(images *[]Image, root string) error {
 		}
 
 		switch ext := strings.ToLower(filepath.Ext(path)); ext {
-		case ".jpg", ".jpeg", ".gif", ".png":
+		case ".jpg", ".jpeg":
 			log.Printf("image: %s", path)
 			*images = append(*images, Image{
-				URL: filepath.Join("/files", path),
+				URL:      filepath.Join("/files", path),
+				ThumbURL: filepath.Join("/thumbs", path),
 			})
 		default:
 			log.Printf("skip: %s", path)
